@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { Row, Col, Form, InputGroup, Card, Button } from 'react-bootstrap'
 import { app } from '../../firebaseInit'
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    const navi = useNavigate();
     const [loading, setLoading] = useState(false);
     const auth = getAuth(app);
     const [form, setForm] = useState({
@@ -25,8 +27,9 @@ const Login = () => {
             setLoading(true)
             signInWithEmailAndPassword(auth, email, pass)
             .then(success => {
-                alert('로그인 성공');
                 setLoading(false);
+                sessionStorage.setItem('email', email);
+                navi('/');
             })
             .catch(error => {
                 alert('Error: ' + error.message);
