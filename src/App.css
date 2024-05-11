@@ -2,10 +2,10 @@
   text-align: center;
 } */
 
-@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100..900&display=swap');
 
 * {
-  font-family: "Jua", sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -13,4 +13,12 @@
 h1 {
   text-align: center;
   /* margin: 30px 0px; */
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }

@@ -29,7 +29,12 @@ const Login = () => {
             .then(success => {
                 setLoading(false);
                 sessionStorage.setItem('email', email);
-                navi('/');
+                sessionStorage.setItem('uid', success.user.uid);
+                if(sessionStorage.getItem('target')) {
+                    navi(sessionStorage.getItem('target'));
+                } else {
+                    navi('/');
+                }
             })
             .catch(error => {
                 alert('Error: ' + error.message);
