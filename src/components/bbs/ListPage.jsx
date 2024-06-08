@@ -7,7 +7,7 @@ import '../Paging.css'
 
 const ListPage = () => {
     const [page, setPage] = useState(1);
-    const [size, setSize] = useState(3);
+    const [size, setSize] = useState(5);
     const [count, setCount] = useState(0);
     const db = getFirestore(app);
     const [posts, setPosts] = useState([]);
